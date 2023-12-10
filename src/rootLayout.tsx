@@ -6,33 +6,57 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { GlobalContextType } from './types';
+
+export const GlobalContext = createContext<GlobalContextType>({
+  apiData: null,
+  isLoading: true,
+});
 
 function RootLayout() {
   const [theme, colorMode] = useMode();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [apiData, setApiData] = useState<{ [key: string]: any }>({});
+  useEffect(() => {
+    //fetch data from proxy node server to prevent cors errors
+    axios.get('http://localhost:4000').then((res) => {
+      setApiData(res.data.data);
+      setIsLoading(false);
+    });
+  }, []);
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Box
-          className="MainContainer"
-          sx={{
-            display: 'flex',
-            padding: 4,
-          }}
-        >
-          <Sidebar />
+    <GlobalContext.Provider
+      value={{
+        apiData,
+        isLoading,
+      }}
+    >
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
           <Box
-            className="PageContent"
+            className="MainContainer"
             sx={{
-              flexGrow: 1,
-              padding: 2,
+              display: 'flex',
+              padding: 4,
             }}
           >
-            <Outlet />
+            <Sidebar />
+            <Box
+              className="PageContent"
+              sx={{
+                flexGrow: 1,
+                padding: 2,
+              }}
+            >
+              <Outlet />
+            </Box>
           </Box>
-        </Box>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </GlobalContext.Provider>
   );
 }
 

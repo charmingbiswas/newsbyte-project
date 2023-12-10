@@ -11,8 +11,8 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from '../../rootLayout';
 
 const getCoinLogo = (name: string) => {
   switch (name) {
@@ -28,16 +28,7 @@ const getCoinLogo = (name: string) => {
 };
 
 function Home() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [apiData, setApiData] = useState<{ [key: string]: any }>({});
-  useEffect(() => {
-    //fetch data from proxy node server to prevent cors errors
-    axios.get('http://localhost:4000').then((res) => {
-      setApiData(res.data.data);
-      setIsLoading(false);
-    });
-  }, []);
-
+  const { apiData, isLoading } = useContext(GlobalContext);
   const render = () => {
     if (isLoading) {
       return <Skeleton animation="wave" />;
