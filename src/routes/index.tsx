@@ -1,23 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom';
 import RootLayout from '../rootLayout';
-import Home from '../components/Home';
-import CryptoConverter from '../components/CryptoConverter';
+import Home from '../pages/Home';
 
 const router = createBrowserRouter([
-    {
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
         path: '/',
-        element: <RootLayout />,
-        children: [
-            {
-                path: '/',
-                element: <Home />,
-            },
-            {
-                path: '/cryptoconverter',
-                element: <CryptoConverter />,
-            },
-        ],
-    },
+        element: <Home />,
+      },
+    ],
+  },
 ]);
 
 export { router };

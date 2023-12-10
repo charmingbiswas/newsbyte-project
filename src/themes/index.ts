@@ -19,12 +19,17 @@ const themeSettings = (mode: ThemeModeType): ThemeOptions => {
             },
             secondary: {
               main: colors.secondary[500],
+              light: colors.secondary[400],
+              dark: colors.secondary[700],
             },
             background: {
               default: colors.primary[500],
             },
             text: {
               primary: colors.whiteAccent[500],
+            },
+            iconBackground: {
+              main: colors.purpleAccent[500],
             },
           }
         : {
