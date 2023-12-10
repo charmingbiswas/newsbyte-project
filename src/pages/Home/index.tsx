@@ -14,7 +14,7 @@ import {
 import { useContext } from 'react';
 import { GlobalContext } from '../../rootLayout';
 
-const getCoinLogo = (name: string) => {
+export const getCoinLogo = (name: string) => {
   switch (name) {
     case 'bitcoin':
       return <img width="50px" height="50px" src="bitcoin.png" />;
