@@ -1,5 +1,9 @@
 import { StyledBox, StyledSidebar, StyledStack } from './Sidebar.styled';
-import { CurrencyExchangeOutlined, Home } from '@mui/icons-material';
+import {
+  CurrencyExchangeOutlined,
+  Home,
+  RequestQuote,
+} from '@mui/icons-material';
 import { StyledNavLink } from '../NavLink/NavLink.styled';
 
 const Sidebar = () => {
@@ -15,8 +19,16 @@ const Sidebar = () => {
               color: 'text.primary',
               width: '50%',
               height: '50%',
-              filter: (theme) =>
-                `drop-shadow(3px 5px 5px ${theme.palette.secondary.light})`,
+            }}
+          />
+        </StyledNavLink>
+
+        <StyledNavLink to="/cryptoconverter">
+          <RequestQuote
+            sx={{
+              color: 'text.primary',
+              width: '50%',
+              height: '50%',
             }}
           />
         </StyledNavLink>

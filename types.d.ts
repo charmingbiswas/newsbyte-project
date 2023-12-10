@@ -3,10 +3,10 @@ import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Palette {
-    iconBackground: Palette['primary'];
+    tertiary: Palette['primary'];
   }
 
   interface PaletteOptions {
-    iconBackground?: PaletteOptions['primary'];
+    tertiary?: PaletteOptions['primary'];
   }
 }

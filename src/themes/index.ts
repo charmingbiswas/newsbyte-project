@@ -22,14 +22,14 @@ const themeSettings = (mode: ThemeModeType): ThemeOptions => {
               light: colors.secondary[400],
               dark: colors.secondary[700],
             },
+            tertiary: {
+              main: colors.purpleAccent[500],
+            },
             background: {
               default: colors.primary[500],
             },
             text: {
               primary: colors.whiteAccent[500],
-            },
-            iconBackground: {
-              main: colors.purpleAccent[500],
             },
           }
         : {
@@ -38,6 +38,9 @@ const themeSettings = (mode: ThemeModeType): ThemeOptions => {
             },
             secondary: {
               main: colors.secondary[200],
+            },
+            tertiary: {
+              main: colors.purpleAccent[200],
             },
           }),
     },

@@ -9,4 +9,7 @@ export const StyledNavLink = styled(NavLink)(({ theme }) => ({
   '&.active': {
     borderLeft: `5px solid ${theme.palette.text.primary}`,
   },
+  '&.active>svg': {
+    filter: `drop-shadow(3px 5px 5px ${theme.palette.secondary.light})`,
+  },
 }));
