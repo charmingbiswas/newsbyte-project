@@ -7,6 +7,6 @@ The entire project has been created with Material UI for easier themeing and dev
   - To run this project, make sure you have ```node js``` installed on your system.
   - (Not a hard rule) You must have ```make``` utility by **GNU** installed on your system to build and run this project.
   - If you **DO NOT** have ```make``` installed, then you can just this command to directly run the project without it:
-      - ```npm run dev```
+      - ```npm run dev-with-server```
   - If you have ```make``` installed on your system, just run:
     -  ```make serve```
