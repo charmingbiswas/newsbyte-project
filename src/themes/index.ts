@@ -23,7 +23,16 @@ const themeSettings = (mode: ThemeModeType): ThemeOptions => {
               dark: colors.secondary[700],
             },
             tertiary: {
+              main: colors.greenAccent[500],
+            },
+            quaternary: {
               main: colors.purpleAccent[500],
+            },
+            quinary: {
+              main: colors.whiteAccent[500],
+            },
+            senary: {
+              main: colors.redAccent[500],
             },
             background: {
               default: colors.primary[500],
@@ -41,6 +50,15 @@ const themeSettings = (mode: ThemeModeType): ThemeOptions => {
             },
             tertiary: {
               main: colors.purpleAccent[200],
+            },
+            quaternary: {
+              main: colors.purpleAccent[200],
+            },
+            quinary: {
+              main: colors.whiteAccent[200],
+            },
+            senary: {
+              main: colors.redAccent[200],
             },
           }),
     },
