@@ -17,8 +17,8 @@ const Sidebar = () => {
           <Home
             sx={{
               color: 'text.primary',
-              width: '50%',
-              height: '50%',
+              width: '60%',
+              height: '60%',
             }}
           />
         </StyledNavLink>
@@ -27,8 +27,8 @@ const Sidebar = () => {
           <RequestQuote
             sx={{
               color: 'text.primary',
-              width: '50%',
-              height: '50%',
+              width: '60%',
+              height: '60%',
             }}
           />
         </StyledNavLink>

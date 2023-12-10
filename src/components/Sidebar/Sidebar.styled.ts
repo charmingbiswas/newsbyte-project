@@ -11,7 +11,6 @@ const commonStyles = (): React.CSSProperties => {
 export const StyledSidebar = styled('nav')(({ theme }) => ({
   backgroundColor: theme.palette.secondary.main,
   borderRadius: '10px',
-  margin: theme.spacing(3, 1, 1, 3),
   color: theme.palette.text.primary,
   minWidth: '5rem',
   maxWidth: '5%',
